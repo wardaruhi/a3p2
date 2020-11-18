@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "master.html" %}
+{% load static %}
+  {% block body_block %}
+<head><link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+  <div class="jumbotron">
+
+  {% if request.user.is_authenticated %}
+   <h1>Hi Welcome {{ request.user.username|title}}</h1> <br>
+      <h2>Thank you for logging in and working for us! Please proceed with your job duties!</h2>
+{% else %}
+<h1>Hi Welcome</h1><br>
+      <h2>Room Rental App is a room booking management system. This is used by us (a motel) to keep track of our rooms, bookings and customers. If you want to book a room with us, please call (123) 456 7890 and a receptionist will be happy to help you through your booking process! Thank you!</h2> <br>
+      <h3>If you are a receptionist who works with us, please login and proceed with your job duties.</h3> <br>
+      <h4>If you are a new hire receptionist, please contact your manager/supervisor for your login details.</h4>
+{% endif %}
+
+</div>
+      {% endblock %}

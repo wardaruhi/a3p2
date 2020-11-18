@@ -1,0 +1,5 @@
+Django==2.2.4
+djangorestframework==3.11.1
+django-crispy-forms==1.7.2
+django-phonenumber-field==5.0.0
+phonenumbers==8.12.11
