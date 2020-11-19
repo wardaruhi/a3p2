@@ -45,10 +45,6 @@ class Book (models.Model):
     def clean(self):
         super(Book, self).clean()
         req_Book = Book.objects.filter(room_number=self.room_number)
-        for x in req_Book:
-            if x.check_in <= self.check_in <= x.check_out:
-                raise ValidationError('Room not available for this time period.')
-#-------------------------------------------------------------------------------------
 
 class UserInfo(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
